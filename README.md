@@ -26,7 +26,13 @@ Hacer una prueba con distintos grupos de usuarios e ir escalando el tamaño de e
 Cuando se realizó el EDA se encontró casas en que su ubicación era sobre aeropuertos, autopistas o el estrato de las casas no eran los mismos a los de los datos oficiales,  adicionalmente se observó que las ubicaciones de los datos de test se concentraban en unos puntos muy específicos de la ciudad, lo cual no es una muestra representativa de los datos ni de la efectividad de nuestros modelos (orientado a toda la ciudad). Estos retos se observaron con la ayuda de la herramienta QGIS.
 
 ### Ubicación inconsistente
-<img src='https://raw.githubusercontent.com/nestorsgarzonc/el_algoritmo_es_correcto_challenge_data_science/9fe28192c4c6f10ecbcba2d743aad2ab9a7469c8/cosas_raras_3.png' width='500px'/>
+<img src='https://raw.githubusercontent.com/nestorsgarzonc/el_algoritmo_es_correcto_challenge_data_science/6eab9822a878e9f0fd47d78ce58f242f768e3ac2/ubicacion_inconsistente.png' width='500px'/>
+
+### Cosas raras 1
+<img src='https://raw.githubusercontent.com/nestorsgarzonc/el_algoritmo_es_correcto_challenge_data_science/5859af6968cd9c591e3cdf9f9ae31039c555d752/cosas_raras.png' width='500px'/>
+
+### Cosas raras 2 geo test
+<img src='https://raw.githubusercontent.com/nestorsgarzonc/el_algoritmo_es_correcto_challenge_data_science/5859af6968cd9c591e3cdf9f9ae31039c555d752/cosas_raras_geo_test.png' width='500px'/>
 
 ### Cosas raras 3
 <img src='https://raw.githubusercontent.com/nestorsgarzonc/el_algoritmo_es_correcto_challenge_data_science/9fe28192c4c6f10ecbcba2d743aad2ab9a7469c8/cosas_raras_3.png' width='500px'/>
@@ -34,11 +40,8 @@ Cuando se realizó el EDA se encontró casas en que su ubicación era sobre aero
 ### Cosas raras 4
 <img src='https://raw.githubusercontent.com/nestorsgarzonc/el_algoritmo_es_correcto_challenge_data_science/9fe28192c4c6f10ecbcba2d743aad2ab9a7469c8/cosas_raras_4.png' width='500px'/>
 
-### Cosas raras geo test
-<img src='https://raw.githubusercontent.com/nestorsgarzonc/el_algoritmo_es_correcto_challenge_data_science/5859af6968cd9c591e3cdf9f9ae31039c555d752/cosas_raras_geo_test.png' width='500px'/>
 
-### Cosas raras
-<img src='https://raw.githubusercontent.com/nestorsgarzonc/el_algoritmo_es_correcto_challenge_data_science/5859af6968cd9c591e3cdf9f9ae31039c555d752/cosas_raras.png' width='500px'/>
+
 
 
 # [Link de Github](https://github.com/nestorsgarzonc/el_algoritmo_es_correcto_challenge_data_science)
