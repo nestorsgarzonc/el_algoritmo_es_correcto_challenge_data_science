@@ -1,13 +1,16 @@
+from screens.home import home
+from screens.demo import demo
+from screens.about_us import about_us
+from components.sidebar import sidebar
 import streamlit as st
-import pandas as pd
 
-st.title('Equipo N&L')
-st.text('By:')
-st.text('Nestor Sebastian Garzon Contreras')
-st.text('Santiago Leonardo Delgado Mejia')
+PAGES = {
+    "Inicio": home,
+    "Demo": demo,
+    "Sobre nosotros": about_us,
+}
 
-df = pd.read_csv('../data/test_data.csv')
 
-st.dataframe(df)
-
-st.image('../cosas_raras_3.png')
+if __name__ == '__main__':
+    selection = sidebar(PAGES)
+    page = PAGES[selection]()
