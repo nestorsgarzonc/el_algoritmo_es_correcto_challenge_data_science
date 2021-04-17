@@ -1,4 +1,8 @@
 import streamlit as st
+import pandas as pd
+import geopy
+from geopy.geocoders import Nominatim
+from geopy.extra.rate_limiter import RateLimiter
 
 
 def demo():
@@ -14,32 +18,29 @@ def demo():
     'tiponegocio_Venta Y Arriendo', 'tipoinmueble_Casa',
     'tipoinmueble_Apartamento'
     """
-    area = st.number_input(
-        '¿Cuál es el área de tu inmueble?', step=1, format='%d')
-    banos = st.number_input('¿Cuántos baños tiene?', step=1.0, format='%d')
-    garajes = st.number_input(
-        '¿Cuántos garajes tiene tu inmueble?', step=1.0, format='%d')
-    habitaciones = st.number_input(
-        '¿Cuántas habitaciones tiene?', step=1.0, format='%d')
-    piso = st.number_input(
-        '¿Cuántos pisos tiene tu casa?', step=1.0, format='%d')
-    valoradministracion = st.number_input(
-        '¿Cuánto pagas de administración? (Si no aplica deja en 0)',
-        step=1.0, format='%d'
+    col1, col2 = st.beta_columns(2)
+    area = col1.number_input(
+        '¿Cuál es el área de tu inmueble?', min_value=0, step=1, format='%d')
+    banos = col2.number_input('¿Cuántos baños tiene?',
+                              min_value=0,  step=1, format='%d')
+    garajes = col1.number_input(
+        '¿Cuántos garajes tiene tu inmueble?', min_value=0,  step=1, format='%d')
+    habitaciones = col2.number_input(
+        '¿Cuántas habitaciones tiene?', min_value=0,  step=1, format='%d')
+    piso = col1.number_input(
+        '¿Cuántos pisos tiene tu casa?', min_value=0,  step=1, format='%d')
+    valoradministracion = col2.number_input(
+        '¿Cuánto pagas de administración? (Si no aplica deja en 0)', min_value=0,
+        step=1, format='%d'
     )
 
-    import geopy
-    from geopy.geocoders import Nominatim
-    from geopy.extra.rate_limiter import RateLimiter
-
-    street = st.sidebar.text_input("Dirección", "")
-    city = st.sidebar.text_input("Ciudad", "Toronto")
+    street = st.text_input("Dirección", "Cra 76 sur # 57-96 ")
+    city = st.text_input("Ciudad", "Bogota")
     country = "Colombia"
 
     geolocator = Nominatim(user_agent="GTA Lookup")
     geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
     location = geolocator.geocode(street+", "+city+", "+country)
-
     lat = location.latitude
     lon = location.longitude
     map_data = pd.DataFrame({'lat': [lat], 'lon': [lon]})

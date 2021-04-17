@@ -2,6 +2,7 @@ import plotly.figure_factory as ff
 import plotly.express as px
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
 
 
 def filter_by_quantile(df: pd.DataFrame, name_col: str, min=0, max=0.9999):
@@ -25,21 +26,26 @@ def home():
     """)
     # col1, col2 = st.beta_columns(2)
 
-    # col1.header('Valorventa')
+    st.header('Valorventa')
     # hist_data = df['valorventa']
-    fig1 = px.histogram(df, x='valorventa')
+    fig1 = px.histogram(df, x='valorventa', nbins=10)
+    # fig = plt.figure()
+    #col1.plotly_chart(fig1, use_container_width = True)
+    st.plotly_chart(fig1)
     # # st.pyplot(fig1)
     # st.pyplot_chart(fig1)
     # # fig1 = ff.create_distplot(hist_data)
     # col1.plotly_chart(fig1, use_container_width=True)
 
-    # col2.header('Valorventa')
+    st.header('Valorventa filtrado')
     hist_data2 = filter_by_quantile(df, 'valorventa', min=0.001, max=0.99)
     fig2 = px.histogram(hist_data2, x='valorventa', nbins=30)
+    # fig2 = px.histogram(df, x='valorventa')
+    st.plotly_chart(fig2)
     # fig2 = ff.create_distpolot(hist_data2)
     # col2.plotly_chart(fig2, use_container_width=True)
 
-    st.plotly_chart(fig2)
+    # st.plotly_chart(fig2)
 
     descriptionMethodology = """
     se filtraron los datos atipicos escogiendo una cota inferior y superior de percentiles.
@@ -95,6 +101,6 @@ def home():
 
     col1, col2 = st.beta_columns(2)
     col1.header("Train")
-    col1.map(my_map, zoom=12)
+    col1.map(my_map, zoom=10)
     col2.header("Test")
-    col2.map(df, zoom=12)
+    col2.map(df, zoom=10)
