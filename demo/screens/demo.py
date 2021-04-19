@@ -1,8 +1,10 @@
+from geo_data import GeoLocation
 import streamlit as st
 import pandas as pd
 import geopy
-from geopy.geocoders import Nominatim
-from geopy.extra.rate_limiter import RateLimiter
+
+
+geoClient = GeoLocation()
 
 
 def demo():
@@ -38,13 +40,11 @@ def demo():
     city = st.text_input("Ciudad", "Bogota")
     country = "Colombia"
 
-    geolocator = Nominatim(user_agent="GTA Lookup")
-    geocode = RateLimiter(geolocator.geocode, min_delay_seconds=1)
-    location = geolocator.geocode(street+", "+city+", "+country)
-    lat = location.latitude
-    lon = location.longitude
+    location = geoClient.get_cords(f'{street}, {city}, {country}')
+    lat = location.lat
+    lon = location.lng
     map_data = pd.DataFrame({'lat': [lat], 'lon': [lon]})
-    st.map(map_data, zoom=12)
+    st.map(map_data, zoom=14)
     tiempo_de_construido = st.slider('¿Cuánto años tiene de construido tu inmueble?',
                                      min_value=0,
                                      max_value=30,
