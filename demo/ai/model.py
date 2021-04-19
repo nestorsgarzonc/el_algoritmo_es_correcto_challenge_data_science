@@ -1,6 +1,7 @@
 from xgboost import XGBRegressor
 import pandas as pd
 import joblib
+import os
 
 
 class ModelData():
@@ -88,8 +89,13 @@ class XGBoost:
             'tipoinmueble_Apartamento'
         ]
 
-    def load_model(self, path='./ai/sklearn_pipeline.pkl'):
-        self.xgBoost = joblib.load(path)
+    def load_model(self):
+        route_path = os.path.dirname(__file__)
+        self.xgBoost = joblib.load(
+            os.path.join(
+                route_path, 'sklearn_pipeline.pkl'
+            )
+        )
 
     def predict(self, arr: list) -> list:
         df = pd.DataFrame(data=arr).T
