@@ -99,7 +99,7 @@ def demo():
         print(data)
         with st.spinner('Prediciendo...'):
             model = XGBoost()
-            model.load_model()
+            model.load_model('./sklearn_pipeline.pkl')
             predictions = model.predict(data.to_arr())
 
         st.success(f'El precio por metro cuadrado es de: {predictions[0]}')
