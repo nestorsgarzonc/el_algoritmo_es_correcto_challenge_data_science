@@ -1,8 +1,12 @@
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 import os
 import googlemaps
+import streamlit as st
+load_dotenv()
 
-# load_dotenv()
+IS_PROD = True
+if IS_PROD:
+    os.environ["MAPS_API_KEY"] = st.secrets['MAPS_API_KEY']
 
 
 class LatLong():
@@ -13,6 +17,7 @@ class LatLong():
 
 class GeoLocation:
     def __init__(self):
+
         self.MAPS_API_KEY = os.getenv('MAPS_API_KEY')
         self.client = googlemaps.Client(key=self.MAPS_API_KEY)
 
