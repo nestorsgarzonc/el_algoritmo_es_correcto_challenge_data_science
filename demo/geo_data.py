@@ -4,8 +4,8 @@ import googlemaps
 import streamlit as st
 load_dotenv()
 
-IS_PROD = False
-if IS_PROD:
+IS_PROD = st.secrets['IS_PROD']
+if IS_PROD == 'true':
     os.environ["MAPS_API_KEY"] = st.secrets['MAPS_API_KEY']
 
 
