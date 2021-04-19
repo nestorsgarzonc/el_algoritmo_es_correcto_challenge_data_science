@@ -90,7 +90,7 @@ class XGBoost:
 
     def load_model(self, path='./ai/sklearn_pipeline.pkl'):
         self.xgBoost = joblib.load(path)
-
+    
     def predict(self, arr: list) -> list:
         df = pd.DataFrame(data=arr).T
         df.columns = self.cols
