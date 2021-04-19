@@ -20,9 +20,9 @@ def home():
     st.markdown('# Descripción de la metodología:')
     st.markdown('Se hizo un EDA para entender y limpiar más de 250 mil registros que se nos entregó. Se consideraron variables importantes: ')
     st.code("""
-    ‘area', 'banos', 'estrato', 'garajes', 'habitaciones', 'piso', 
+    'area', 'banos', 'estrato', 'garajes', 'habitaciones', 'piso', 
     'valoradministracion','valorventa','latitud', 'longitud', 
-    ’tipoinmueble’, ‘tiponegocio’, ‘tiempodeconstruido’
+    'tipoinmueble', 'tiponegocio', 'tiempodeconstruido'
     """)
     # col1, col2 = st.beta_columns(2)
 
