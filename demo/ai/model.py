@@ -88,9 +88,9 @@ class XGBoost:
             'tipoinmueble_Apartamento'
         ]
 
-    def load_model(self, path='./sklearn_pipeline.pkl'):
+    def load_model(self, path='./ai/sklearn_pipeline.pkl'):
         self.xgBoost = joblib.load(path)
-    
+
     def predict(self, arr: list) -> list:
         df = pd.DataFrame(data=arr).T
         df.columns = self.cols
