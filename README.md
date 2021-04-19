@@ -4,6 +4,9 @@ By:
 - [Nestor Sebastian Garzon Contreras](https://www.linkedin.com/in/sebastiangarzonc/)
 - [Santiago Leonardo Delgado Mejia](https://www.linkedin.com/in/santiago-leonardo-delgado-mej%C3%ADa-8a97811a8/)
 
+# Web app
+https://share.streamlit.io/nestorsgarzonc/el_algoritmo_es_correcto_challenge_data_science/demo/app.py
+
 # Descripción de la metodología: 
 Se hizo un EDA para entender y limpiar más de 250 mil registros que se nos entregó. Se consideraron variables importantes: 
 ```
