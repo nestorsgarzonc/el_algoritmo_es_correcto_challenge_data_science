@@ -8,7 +8,6 @@ IS_PROD = True
 if IS_PROD:
     os.environ["MAPS_API_KEY"] = st.secrets['MAPS_API_KEY']
 
-
 class LatLong():
     def __init__(self, lat: float, lng: float):
         self.lat = lat
