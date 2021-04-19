@@ -4,9 +4,10 @@ import googlemaps
 import streamlit as st
 load_dotenv()
 
-IS_PROD = True
+IS_PROD = False
 if IS_PROD:
     os.environ["MAPS_API_KEY"] = st.secrets['MAPS_API_KEY']
+
 
 class LatLong():
     def __init__(self, lat: float, lng: float):

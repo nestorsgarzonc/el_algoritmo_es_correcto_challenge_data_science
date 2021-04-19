@@ -12,7 +12,7 @@ def filter_by_quantile(df: pd.DataFrame, name_col: str, min=0, max=0.9999):
 
 
 def home():
-    df = pd.read_csv('../data/test_data.csv')
+    df = pd.read_csv('./data/test_data.csv')
     st.title('Equipo N&L')
     st.text('By:')
     st.text('Nestor Sebastian Garzon Contreras')
@@ -79,21 +79,21 @@ def home():
     st.markdown(retos_encontrados)
 
     st.markdown("### Ubicación incosistente")
-    st.image('../cosas_raras_3.png')
+    st.image('./cosas_raras_3.png')
     st.markdown("### Cosas raras")
-    st.image('../cosas_raras.png')
-    st.image('../cosas_raras_4.png')
+    st.image('./cosas_raras.png')
+    st.image('./cosas_raras_4.png')
     st.markdown("### Tests")
-    st.image('../cosas_raras_geo_test.png')
+    st.image('./cosas_raras_geo_test.png')
     st.markdown("### Cosas raras 3")
-    st.image('../cosas_raras_3.png')
+    st.image('./cosas_raras_3.png')
     # st.markdown("###Cosas raras 4")
 
     df['lat'] = df['latitud']
     df['lon'] = df['longitud']
     st.dataframe(df)
 
-    my_map = pd.read_csv('../data/train_data.csv')
+    my_map = pd.read_csv('./data/train_data.csv')
 
     my_map['lat'] = my_map['latitud']
     my_map['lon'] = my_map['longitud']
